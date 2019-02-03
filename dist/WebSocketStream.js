@@ -2,22 +2,14 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const debug_1 = __importDefault(require("debug"));
 const stream_1 = require("stream");
-const crypto = __importStar(require("crypto"));
 const WebSocket_1 = __importDefault(require("./WebSocket"));
 class WebSocketStream extends stream_1.Duplex {
     constructor(url, tag) {
         super();
-        this.tag = tag || crypto.randomBytes(2).toString("hex");
+        this.tag = tag || Math.random().toString().slice(2, 4);
         this.log = debug_1.default(`discovery-cloud:wsStream-${this.tag}`);
         this.socket = new WebSocket_1.default(url);
         this.ready = new Promise(resolve => {
