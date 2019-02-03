@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@types/base-x@^1.0.29":
-  version "1.0.29"
-  resolved "https://registry.yarnpkg.com/@types/base-x/-/base-x-1.0.29.tgz#8a2d73e4a5c3121757a5f8870cfa4509655186b6"
-  integrity sha1-ii1z5KXDEhdXpfiHDPpFCWVRhrY=
-
 "@types/debug@^0.0.31":
   version "0.0.31"
   resolved "https://registry.yarnpkg.com/@types/debug/-/debug-0.0.31.tgz#bac8d8aab6a823e91deb7f79083b2a35fa638f33"
